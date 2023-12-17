@@ -1,0 +1,746 @@
+//Información sobre algunos comandos de Half Life
+//***********************************************
+
++alt1
++attack // Dispara
++attack2 // Disparo secundario - *Mire "special"
++back // Te mueve hacia atrás
++break
++camdistance // Mueve la cámara de seguimiento lejos del jugador - *Solo funciona en tercera persona
++camin // Mueve la cámara de seguimiento hacia adelante - *Solo funciona en tercera persona
++cammousemove // Mueve la cámara de seguimiento con el mouse - *Solo funciona en tercera persona
++camout // Mueve la cámara de seguimiento hacia atrás - *Solo funciona en tercera persona
++campitchdown // Disminuye el ángulo de la cámara para mirar hacia abajo - *Solo funciona en tercera persona
++campitchup // Disminuye el ángulo de la cámara para mirar hacia arriba - *Solo funciona en tercera persona
++camyawleft // Inclina la cámara de seguimiento hacia la izquierda - *Solo funciona en tercera persona
++camyawright // Inclina la cámara de seguimiento hacia la derecha - *Solo funciona en tercera persona
++commandmenu
++duck // Agacharse
++forward // Te mueves hacia adelante
++graph
++jlook // Permite mirar alrededor con el joystick
++jump // Salta
++klook // Permite mirar alrededor con el teclado
++left // Te mueves a la izquierda
++lookdown // Mirar abajo
++lookup // Mirar arriba
++mlook // Permite mirar alrededor con el mouse
++movedown // Mueve al jugador hacia abajo - *Bajar una escalera, nada hacia abajo
++moveleft // Te mueves a la izquierda
++moveright // Te mueves a la derecha
++moveup // Mueve al jugador hacia arriba - *Subir una escalera, nada hacia arriba
++reload // Recarga el arma actual
++right // Te mueves a la derecha
++score
++showscores // Muestra la tabla de puntuación
++speed // Fuerza al jugardor a caminar si 'correr siempre' está activado, y lo fuerza a correr si 'correr siempre' está desactivado
++strafe // modificador de "strafe". Mientras está presionado, utiliza las teclas de dirección para realizar strafes en diferentes direcciones
++use // Usa un objeto, como botones, cañones, etc.
++voicerecord
+-alt1
+-attack
+-attack2
+-back
+-break
+-camdistance
+-camin
+-cammousemove
+-camout
+-campitchdown
+-campitchup
+-camyawleft
+-camyawright
+-commandmenu
+-duck
+-forward
+-graph
+-jlook
+-jump
+-klook
+-left
+-lookdown
+-lookup
+-mlook
+-movedown
+-moveleft
+-moveright
+-moveup
+-reload
+-right
+-score
+-showscores
+-speed
+-strafe
+-use
+-voicerecord
+addip // Añade la ip a la lista de filtros de ban - * Usa 0 minutos para añadirla permanentemente
+alias // Junta varios comandos en una función (alias), para ejecutarlos todos al llamar al alias
+ambient_fade "100" // Establece la distancia a la cual el sonido ambiental se disipa
+ambient_level "0.300" // Establece el volumen ambiental
+appenddemo // Grama una demo y la concatena al arhivo existente en Half-Life/Valve/demo.dem
+ati_npatch "1"
+ati_subdiv "2"
+autosave // Activa el guardado automático
+banid // Banea y kickea jugadores de servidores usando su ID única - Obtén está ID única del comando "users" - 0 minutos es un ban permanente- **Solo Version 4.0.1.3+ 
+bannedcfgfile "0"
+bgmbuffer "4096" // Establece el tamaño del buffer de audio del CD
+bgmvolume "1" // Activa y desactiva el audio del CD- * 1 es 'activado', 0 es 'desactivado'
+bind // Establece una tecla para realizar una acción al presionarla
+bitmapfonts "1"
+bottomcolor "6" // Establece el color inferior del modelo de jugador
+brightness "1" // Activa la reducción de destellos - *Mientras más alto el valor, más brillante 
+cam_command "0" // Activa y desactiva los comandos de la cámara de seguimiento - * 1 es 'activado', 0 es 'desactivado'
+cam_contain "0" // Activa y desactiva el "auto contain" de la cámara de seguimiento - * 1 es 'activado', 0 es 'desactivado'
+cam_idealdist "64" // Establece la distancia preferida entre el modelo del jugador y la cámara de seguimiento - *Solo funciona en tercera persona
+cam_idealpitch "0" // Establece el ángulo horizontal preferido de la cámra de seguimiento- *Solo funciona en tercera persona
+cam_idealyaw "90" // Establece el ángulo vertical preferido de la cámra de seguimiento - *Solo funciona en tercera persona
+cam_snapto "0" // Establece el intervalo preferido de la cámra de seguimiento - *Solo funciona en tercera persona
+cancelselect // Cancela la selección
+career
+cd // Conrola el audio del CD - * por ejemplo , 'cd stop' detiene el sonido del CD, 'cd loop X' reproduce X veces una pista
+centerview // Centra la visión del jugador
+changelevel // Cambia el mapa y mantiene la conección con los clientes
+changelevel2 // Continúa el juego actual en un nuevo mapa
+chase_active "0"
+chase_back "100" // Establce la distancia preferida entre el jugador y la cámra de perseguimiento al retroceder
+chase_right "0" // Establece la desviación horizontal preferida de la cámara de seguimiento
+chase_up "16" // Establece la desviación vertical preferida de la cámara de seguimiento
+clear // clears the console screen
+clientport "27005" // Establece el puerto que el cliente utilizará para conectarse al servidor
+clockwindow "0.500"
+cl_allowdownload "1" // Activa y desactiva la descarga de mapas, grafitis y modelos al conectarse a un servidor - * 1 es 'activado', 0 es 'desactivado'
+cl_allowupload "1" // Activa y desactiva la subida de mapas, grafitis y modelos al conectarse a un servidor - * 1 es 'activado', 0 es 'desactivado'
+cl_anglespeedkey "0.670" // Establece la velocidad a la que las teclas de dirección cambian la visión
+cl_backspeed "400" // Establece la velocidad de retroceso del jugador - Solo es puede ir a la velocidad que el servidor lo permite
+cl_bob "0.010" // Establece la cantidad a la que la que la vista rebota cuando el jugador corre
+cl_bobcycle "0.800" //Establece la frecuencia a la que la vista rebota cuando el jugador corre
+cl_bobup "0.500" // Establece la frecuencia a la que las vista del jugador rebota cuando el jugador corre
+cl_chasedist "112"
+cl_clockreset "0.100"
+cl_cmdbackup "2"
+cl_cmdrate "30"
+cl_dlmax "128"
+cl_download_ingame "1" // Activva y desactiva la descarga de modelos y grafitis durante el juego - * 1 es 'activado', 0 es 'desactivado'
+cl_fixtimerate "7.500"
+cl_forwardspeed "400" // Establece la velocidad hacia adelante del jugador - Solo es puede ir a la velocidad que el servidor lo permite
+cl_gaitestimation "1" // Permite estimar el movimiento de pasos del jugador  
+cl_gg "0" // Activa y desactiva el modo indicador del juego - * 1 es 'activado', 0 es 'desactivado'
+cl_himodels "0" // Activa y desactiva los modelos de jugador de alta calidad - * 1 es 'activado', 0 es 'desactivado'
+cl_idealpitchscale "0.800"
+cl_lc "1"
+cl_logocolor "0"
+cl_logofile "0"
+cl_lw "1"
+cl_messages // Muestra los mensajes del servidor
+cl_movespeedkey "0.300" // Establece la velocidad de movimiento al usar el teclado
+cl_needinstanced "0"
+cl_nosmooth "0"
+cl_pitchdown "89" // Establece el máximo ángulo para mirar abajo - *89 es lo default 
+cl_pitchspeed "225" // sets the speed at which the pitch changes
+cl_pitchup "89" //  Establece el máximo ángulo para mirar arriba - *89 es lo default 
+cl_pmanstats "0"
+cl_rate
+cl_resend "6" // Establece el recuento de reenvíos 
+cl_showerror "0"
+cl_showevents "0"
+cl_showfps "0"
+cl_showmessages "0"
+cl_shownet "0" // Activa y desactiva el mostrar el número de packetes de red - * 1 es 'activado', 0 es 'desactivado'
+cl_sidespeed "400" // Establece la velocidad de strafe del jugador
+cl_slist "10" //Establece el número de servidores en la lista de srevidores
+cl_smoothtime "0.100"
+cl_solid_players "1" // Activa y desactiva los modelossólidos de jugadores - * 1 es 'activado', 0 es 'desactivado'
+cl_timeout "60" // Establece el tiempo de inactividad antes de que el cliente se desconecte
+cl_updaterate "20"
+cl_upspeed "320" // Establece la velocidad a la que el jugador sube escaleras
+cl_vsmoothing "0.050"
+cl_waterdist "4" // Establece la distancia bajo el agua
+cl_weaponlistfix "0"
+cl_yawspeed "210" // Establece la velocidad de giro - * Solo es puede ir a la velocidad que el servidor lo permite
+cmd // can use this in conjunction with a command
+cmdlist // Lista de todos los comandos de consola - * Si escribes 'cmdlist a', solo mostrará los comandos que comiencen con la letra a, y así- también, 'cmdlist log logfile escribe la lista en C:logfile
+commentator
+com_filewarning "0"
+condebug
+condump
+connect // Conecta al servidor alojado en la ip indicada
+console "1"
+contimes // muestra n líneas de overlay - * n = de 4 a 64
+con_color "255"
+con_fastmode "1"
+con_notifytime "4" // Establece el tiempo de notificicación del cliente
+coop "0" // Activa y desactiva el juego cooperativo - * 1 es 'activado', 0 es 'desactivado'
+crosshair "1" //Activa y desactiva la mira del arma - * 1 es 'activado', 0 es 'desactivado'
+cvarlist // Muestra una lista de todos las variables de consola en la consola - * 'cvar log filename' escribe la lista en file C:filename
+c_maxdistance "200" // Establece la distancia máxima de la cámara de seguimiento
+c_maxpitch "90" // Establece la distancia horizontal máxima de la cámara de seguimiento
+c_maxyaw "135" // Establece la distancia vertical máxima de la cámara de seguimiento
+c_mindistance "30"
+c_minpitch "0" // Establece la distancia horizontal mínima de la cámara de seguimiento
+c_minyaw "-135" // Establece la distancia vertical mínima de la cámara de seguimiento
+deathmatch "0" // Activa y desactiva el modo "deathmatch" - * 1 es 'activado', 0 es 'desactivado'
+default_fov "90" // Establece el campo de visión predeterminado en grados - * miestras más pequeño el número, más pequeño el campo de visión, mientras más grande el número, más amplio el campo de visión
+delta_clear
+delta_stats
+demos // Ejecuta un bucle de demos inicializados con stardemos
+dem_forcehltv
+dem_jump
+dem_pause
+dem_save
+dem_speed
+dem_start
+developer "0" // Activa y desactiva los comandos de desarrollador en la consola - * 1 es 'activado', 0 es 'desactivado'
+dev_overview "0"
+direct "0.900"
+disconnect // Desconecta a un jugador del servidor
+dlfile
+dropclient // Desconecta a un cliente del servidor
+d_spriteskip "0"
+echo // Texto echo en la consola - * Útil par hacer saber a un jugador que se ejecuté exitosamente un script
+edgefriction "2" // Establece la cantidad de fricción entre un jugador y los objetos
+endmovie // Finaliza la actual película 
+entities // Lista de las entidades cargadas
+envmap // Crea las 6 .bmp imágenes del cielo desde la posición actual del jugador	
+escape // Actúa como una tecla  <ESCAPE> para esconder la consola y cancelar las selecciones
+exec // Ejecuta un sccript o un archivo .cfg
+exit // Cierra un juego o un servidor dedicado sin pedir confirmación
+ex_interp "0.100"
+fakelag "0" // Simula lag - * Más grande el número, más lag
+fakeloss "0" // Simula paquetes perdidos - * Más grande el número, más paquetes perdidos
+firstperson // Activa la vista en primera persona
+flush // Refresca la memoria y recarga el mapa
+fly
+ForceCloseComman
+force_centerview // Fuerza al jugadora a mirar defrente
+fps_max "72"
+fps_modem "0" // Establece el número máximo de fps en una artida online
+fs_lazy_precache "0"
+fs_perf_warnings "0"
+fs_precache_timings "0"
+fs_startup_timings "0"
+fullinfo // Muestra la informasión del usuario
+fullserverinfo // Muestra la información del servidor
+fullupdate
+gamedir
+gamma "2.500" // Establece la cantidad de gamma
+gg // Inicia el indicador de juego usando <demoname> - * 'cl_gg'debe estar activado 
+gl_affinemodels "0"
+gl_alphamin "0.250" // Establece el nivel de alpha mínimo
+gl_clear "0" // ACtiva y desactiva la calidad visual - * Cuando etá activado, se muestras grietas entre las texturas
+gl_cull "1" // Activa y desactiva la renderización de solo los objetos visibles - * 1 es 'activado', 0 es 'desactivado'', y 0 bajará los fps
+gl_d3dflip "0" // Activa y desactiva el orden de renderización para D3D
+gl_dither "1" // Alterna la interpolación - * 1 es 'activado', 0 es 'desactivado'
+gl_dump // Crea una lista de la información de la tarjeta gr´fica: vendedor, renderizador, versión y extensiones usadas
+gl_flipmatrix "0" // Alterna la reparación de miras especiales al usar 3DNow! 3Dfx MiniGL - * 1 es 'activado', 0 es 'desactivado'
+gl_fog "1"
+gl_keeptjunctions "1" // Alterna la grietas entre teturas - * 1 es 'activado', 0 es 'desactivado', 1 es mejor calidad pero menos fps
+gl_lightholes "1" // Alterna los hoyos de luz - * 1 es 'activado', 0 es 'desactivado'
+gl_max_size "256" // Establece el tamaño máximo de las texturas
+gl_monolights "0" // Activa y desactiva una luz uniforme sin sombras - * 1 es 'activado', 0 es 'desactivado', solo funciona con OpenGL
+gl_nobind "0" // Alterna el reemplzar las texturas por cracteres alfanuméricos - * 1 es 'activado', 0 es 'desactivado'
+gl_nocolors "0"
+gl_overbright "0" // Alterna el modod de brillo máximo - * 1 es 'activado', 0 es 'desactivado'
+gl_palette_tex "1" // Alterna la paleta de texturas - * 1 is 'on', 0 is 'off'
+gl_picmip "0" // Establece la calidad de renderizado - * Mientras más alto el número es más rápido, pero menor calidad
+gl_playermip "0" // Establece la calidad de renderizado - * Mientras más alto el número es más rápido, pero menor calidad
+gl_polyoffset "4" // Establece la calidad de renderizado del jugador - Prueba istintos valorse para solucionar problemas
+gl_reporttjunctions "0" // alterna la escritura de informes de unión en T en la consola 
+gl_round_down "3" // Establece el valor de redondeo hacia abajo de las texturas - * Mientras más alto el número es más rápido, pero menor calidad
+gl_spriteblend "1" // Alterna la mezcla de gráficos en los sprites - * 1 es 'activado', 0 es 'desactivado'
+gl_texels // Informa sobre el número de "texels" cargados en la tarjeta gráfica
+gl_texturemode // Establece el modo de renderizado. Mientras más rápido pero menor calidad, y más calidad pero menor velocidad - * [type]las opciones son: gl_nearest_mipmap_nearest, gl_linear_mipmap_nearest (these two deal with bilinear filtering) and gl_nearest_mipmap_linear, gl_linear_mipmap_linear (lo cua arregla el filtrado trilineal)
+gl_wateramp "0.300"
+gl_wireframe "0"
+gl_zmax "4096" // Establece el tamaño máximo del Z-Buffer
+gl_ztrick "0" // Acelera el renderizado de 3Dfx  - * 1  es 'activado', 0 es 'desactivado'
+god // Hace invencible al jugador - * 'sv_cheats' debe estar en 1
+graphheight "64" // Etablece la altura del r_netgraph 
+heartbeat // Envía una señal al servidor para informar que el servidor sigue activo
+hideconsole // Esconde la consola
+hisound "1" // Alterna la calidad de sonido - * 1=22kHz, 0=11kHz
+HostMap "0"
+hostname "0" // Establece el nombre de host del servidor
+hostport "0" // Establece el puerto de conexión del servidor
+host_framerate "0" // EStablece la velocidad a la que el host/servidor interactúa con el juego
+host_killtime "0" // Establece el tiempo de demora antes de apagar el servidor
+host_limitlocal "0"
+host_profile "0"
+host_speeds "0"
+hpkextract // extrae archivos del archivo hpk - * opts = <hpkname> [all | single index]
+hpklist // Lista de archivos en <hpkfilename>
+hpkremove // Borra los archivos de <hpkfilename>
+hpkval // Muestra la suma de control de <hpkfilename>
+hpk_maxsize "4"
+httpstop
+hud_capturemouse "1"
+hud_centerid "0" // Alterna el mostrar la ID del jugador - * 1  es 'activado', 0 es 'desactivado'
+hud_classautokill "1"
+hud_deathnotice_time "6" // Establecepor cuánto tiempo los mensajes de muerte permanecen en la pantalla
+hud_draw "1"
+hud_drawhistory_time "5" // EStablece por cuánto tiempo los items del HUD permanecen en la pantalla
+hud_fastswitch "0" // Activa o desactiva el cambio rápido de armas - * 1  es 'activado', 0 es 'desactivado'
+hud_saytext "1"
+hud_saytext_time "5" // Establece por cuánto tiempo los mensajes del chat permanecen en la pantalla
+hud_takesshots "0"
+impulse // calcomanía con el logotipo de aerosoles 
+interp // ACtiva la interpolación de cuadros
+invnext // Selecciona el siguiente item en el inventario
+invprev // Selecciona el anterior item en el inventario
+ip "0" // Establece la dirección ip
+ipx_clientport "0" // Establece el puerto del cliente para un juego IPX
+ipx_hostport "0"
+ip_clientport "0" // Establece el puerto del cliente para un juego TCP/IP
+ip_hostport "0" // Establece el puerto del servidor para un juego TCP/IP
+joyadvanced "0" // Hace cosas con el joystick - ¿¡¿Pero quién usa joystick ara juegos fps?!? :)
+joyadvancedupdat
+joyadvaxisr "0"
+joyadvaxisu "0"
+joyadvaxisv "0"
+joyadvaxisx "0"
+joyadvaxisy "0"
+joyadvaxisz "0"
+joyforwardsensitivity "-1"
+joyforwardthreshold "0.150"
+joyname "0"
+joypitchsensitivity "1"
+joypitchthreshold "0.150"
+joysidesensitivity "-1"
+joysidethreshold "0.150"
+joystick "0"
+joywwhack1 "0"
+joywwhack2 "0"
+joyyawsensitivity "-1"
+joyyawthreshold "0.150"
+kick // Kickea a un jugador del servidor usando su id única - obetñen la ID del comando "user" - **Solo Version 4.0.1.3+ 
+kill // Te suicidas
+lambert "1.500"
+lightgamma "2.500" // Establece el gamma para los rayos de luz
+list // Crea una lista de los servidores locales luego de usar el comando "slist"
+listdemo // Crea una lista de la información acerca de <demoname>
+listen
+listid // Crea una lista de las IDs de los jugadores en la lista de Ban 
+listip // Crea una lista de las ip en la lista de filtros de ban
+load // Carga un juego guardado
+loadas8bit "0" // Alterna el forzar los sonidos de 8 bits (baja calidad) - * 1  es 'activado', 0 es 'desactivado'
+localinfo // Muestra las configuraciones locales
+log // Alterna el inicio de sesión
+logaddress // Establece la dirección para un logfile al entrar a una máquina distinta
+logaddress_add
+logaddress_del
+logsdir "0"
+lookspring "0" // Alterna el centrado de visión automática cuando 'mlook' está desactivado- * 1  es 'activado', 0 es 'desactivado'
+lookstrafe "0" // Alterna el strafing con el mouse cuando 'mlook' está activado - * 1  es 'activado', 0 es 'desactivado'
+lservercfgfile "0" // Establece el archivo cfg del oyende de servidor - lo default es listenserver.cfg
+map // Cambia el mapa actual del servidor y desconecta a los jugadores
+mapchangecfgfile "0"
+mapcyclefile "0" // Especifíca el nombre de la lista de mapas en un servidor - * lo default es 'mapcycle.txt'
+maps // Crea una lista de mapas que contienen <substring>
+maxplayers // Establece el número máximo de clientes en un servidor
+max_queries_sec "3"
+max_queries_sec_global "30"
+max_queries_window "60"
+mcache // Crea una lista del contenido caché
+messagemode // Muestra <text> a todos los jugadores en el servidor
+messagemode2 // uUestra <text> a todos los jugadores en el mismo equipo en el servidor
+model "0" // cambia el model del jugador a <modelname>
+motd // Muestra el mensaje del día del servidor encontrado en motd.txt 
+motdfile "0"
+motd_write
+mp3
+MP3FadeTime "2"
+MP3Volume "0.800"
+mp_consistency "1"
+mp_decals "300" // Establece el número máximo de calcos mostrados a la vez
+mp_footsteps "1" // Activa y desactiva los sonidos de pasos - * 1  es 'activado', 0 es 'desactivado'
+mp_logecho "1" // Alterna el uso de los comandos echo - * 1  es 'activado', 0 es 'desactivado'
+mp_logfile "1" // Alterna el regisro durante juegos multijugador - * 1  es 'activado', 0 es 'desactivado'
+multicastport "27025"
+m_filter "0" // Activa y desactiva el filtro del ratón (suavizado) - * 1  es 'activado', 0 es 'desactivado'
+m_forward "1" // Establece el multiplicador de sensiblidad al mover el mouse hacia adelante
+m_pitch "0.022" // Establece el multiplicador de sensibilidad al mover el mouse verticalmente - * Número negativos resultan en una mirada invertida
+m_side "0.800" // Establece el multiplicador de sensibilidad al hacer un strafe
+m_yaw "0.022" // Establece el multiplicador de sensiblidad al mover el mouse horizontalmente
+name "0" // Cambia el nombre del jugador
+net_address "0"
+net_chokeloop "0"
+net_drawslider "0"
+net_graph "0"
+net_graphpos "1"
+net_graphwidth "150"
+net_log "0"
+net_scale "5"
+net_showdrop "0"
+net_showpackets "0"
+new // Coemienza un nuevo jeugo de un solo jugador
+noclip // Si está activado, los jugadores pueden atravesar objetos - *1  es 'activado', 0 es 'desactivado',y 'sv_cheats' debe estar en 1
+nosound "0" // alterna el sonido - * 1  es 'activado', 0 es 'desactivado
+notarget // Hace que los jugadores te ignoren - * 'sv_cheats' debe estar en 1
+password "0" // Establece la contraseña de un servidor privado
+pausable "1" // Alterna el pausar el juego pr los clientes - 1  es 'activado', 0 es 'desactivado'
+pause // Pausa el juego
+ping // Muestra el ping de todos los clientes
+pingservers // Muestra el ping de los servidores en la lista de servidores
+play // Reproduce un archivo .wav de nombre <filename>
+playdemo // reproduce <filename>.dem a la velocidad normal
+playvol // Establece el volumen de la reproducción del demo
+pointfile // Carga los <filename>.pts del mapa
+port "27015" // Establece el puerto de conección default del servidor
+ppdemostart
+quit // Sale a windows sin confirmación
+rate "30000" // Establece el envío de datos del cliente - * 
+rcon // Control remoto de la consola de un servidor - * <password> debe ser dada primero antes de que el servidor acepte algún comando
+rcon_password "0" // Establece la contrasea rcon
+rcon_port "0" // Establece el puerto rcon en la consola
+reconnect // Reconecta con el servidor actual
+record // Graba una demo y lo guarda en Half-Life/Valve/<filename>.dem
+reload // Recarga el mapa actual
+removedemo // Remueve un segmento <sgmt> de <demo>
+removeid // Borra una id única de ser baneada en un servidor - **Solo Version 3.0.1.3 / 4.0.1.3+ 
+removeip // Remueve la direcci´ñon ip de la lista de filtros de ban
+resetrcon
+restart // Reinicia el mapa actual y borra la pizarra
+retry // Trata de conectar or más veces a un servidor que falló en la primera conexión
+room_delay "0" // Configuración de sonidos 3D
+room_dlylp "2" // 3Configuración de sonidos 3D
+room_feedback "0" // Configuración de sonidos 3D
+room_left "0" // Configuración de sonidos 3D
+room_lp "0" // Configuración de sonidos 3D
+room_mod "0" // Configuración de sonidos 3D
+room_off "0" // Configuración de sonidos 3D
+room_refl "0" // Configuración de sonidos 3D
+room_rvblp "1" // Configuración de sonidos 3D
+room_size "0" // Configuración de sonidos 3D
+room_type "0" // Configuración de sonidos 3D
+r_bmodelhighfrac "5"
+r_bmodelinterp "1"
+r_cachestudio "1"
+r_cullsequencebox "1"
+r_decals "4096" // Establece el número máximo de calcos
+r_detailtextures "0"
+r_detailtexturessupported "1"
+r_drawentities "1" // Alterna el dibujar a los jugadores y sprites - * 1  es 'activado', 0 es 'desactivado'
+r_drawviewmodel "1" // Alterna el mostrar las armas- * 1  es 'activado', 0 es 'desactivado'
+r_dynamic "1" // Alterna las luces dinámicas - * 1  es 'activado', 0 es 'desactivado'
+r_fullbright "0" // Alterna el brillo máximo solo en juegos locales - * 1  es 'activado', 0 es 'desactivado'
+r_glowshellfreq "2.200"
+r_lightmap "0" // Solo en renderizador software - * Muestra 1 de 4 (0,1,2,3) posibles mapas de luz para ver el rango de luces activadas
+r_mirroralpha "1" //Alterna las texturas reflectivas - * 1  es 'activado', 0 es 'desactivado'
+r_mmx "0" // Alterna los cálculos MMx para MMX cpu's - * 1  es 'activado', 0 es 'desactivado'
+r_norefresh "0" // Alterna la limpieza de HUD y consola antes de redibujar - * 1  es 'activado', 0 es 'desactivado'
+r_novis "0" // Alterna el mostrar los polígonos bajo el agua - * 1  es 'activado', 0 es 'desactivado', 'r_wateralpha' debe estar en 1
+r_speeds "0" // Alterna los fps promedio,velocidad de dibujado e información de los polígonos - * 1  es 'activado', 0 es 'desactivado', útil al crear mapas
+r_traceglow "0" // Alterna la inclusión de monstruos en la verificación de sprites brillantes - * 1  es 'activado', 0 es 'desactivado'
+r_wadtextures "0"
+r_wateralpha "1" // Alterna la mezcla de transparenciasa bajo el agua - * 1  es 'activado', 0 es 'desactivado'', 'r_novis' debe estar activado
+save // Guarda el juego actual
+say // Chatea con todos los jugadores en un servidor
+say_team // Muestra un mensaje a solo los miembros de equipo
+screenshot // Captura la pantalla y la guarda en el directorio Half-Life/Valve 
+scr_centertime "2" // Establece por cuánto tiempo los mensajes del servidor permancen en pantalla
+scr_connectmsg "0" // Muestra los mensajes en la esquina superior izquierda
+scr_connectmsg1 "0" // Muestra los mensajes 1 en la esquina superior izquierda
+scr_connectmsg2 "0" // Muestra los mensajes 2 en la esquina superior izquierda
+scr_conspeed "600" // Establece la velocidad de deslizamiento de la consola
+scr_ofsx "0" // Establece la desviación de los mensajes en pantalla
+scr_ofsy "0" // Establece la desviación de los mensajes en pantalla
+scr_ofsz "0" // Establece la desviación de los mensajes en pantalla
+scr_printspeed "8" // Establece la velocidad de impresión de los mensajes en pantalla
+sendents
+sendres
+sensitivity "3" // Establece la sensibilidad del mouse
+servercfgfile "0" // Establece el archivo de configuración del servidor * lo default es server.cfg
+serverinfo // Muestra la información del servidor
+setdemoinfo // Añade nformación a la demo, como el título
+setinfo // Establece la ID del clan de TFC
+setmaster // Establece el servidor maestro - * Usa una ip o un nombre de host
+setpause
+showinfo // Alterna el muestreo de todos los paquetes - * 1  es 'activado', 0 es 'desactivado'
+showpause "1" // toggles pause of graphic display - * 1  es 'activado', 0 es 'desactivado'
+shutdownserver
+sizedown // Reduce el tamaño de la pantalla e incrementa los fps
+sizeup // Incremeneta el tamaño de la pantalla y reduce los fps
+skill "1" // Establece la dificultad en un juego individual o cooperativo
+skin "0" // Establece el skin del modelo
+slist // Busca servidores locales - * Usa "list" para mostrar la lista
+slot1 // Grupo de armas 1
+slot10 // Grupo de armas 10
+slot2 // Grupo de armas 2
+slot3 // Grupo de armas 3
+slot4 // Grupo de armas 4
+slot5 // Grupo de armas 5
+slot6 // Grupo de armas 6
+slot7 // Grupo de armas 7
+slot8 // Grupo de armas 8
+slot9 // Grupo de armas 9
+snapshot // Toma una captura de pantalla
+snapto
+snd_noextraupdate "0" // Alterna las actualizaciones de sonidos extras - * 1  es 'activado'y solo se usa si tiene problemas, 0 es 'desactivado'
+snd_show "0" // Alterna el muestreo de qué sonidos estás siendo reproducidos - * 1  es 'activado', 0 es 'desactivado'
+soundfade // Establece los parámetros de desvanecimiento de sonido - *<param> = <%><hold>[<out><in>]
+soundinfo // Muestra el número de canales estéreo, muestras, samplebits, velocidad DMA, y canales de sonido
+soundlist // Muestra una lista de todos los sonidos cargados
+spawn // Spawnea a un jugador en la partida
+speak // Dice algo en el intercomunicador - * Prueba : hello, #000000, mesa, you, go alert
+special // Muestra el menú especial para cada clase
+spec_autodirector "1"
+spec_decal
+spec_drawcone "1"
+spec_drawnames "1"
+spec_drawstatus "1"
+spec_help
+spec_menu
+spec_mode
+spec_pip "1"
+spec_pos
+spk
+startdemos // Comienza la reproducción en bucle de demos
+startmovie // Reproduce un película
+stat
+stats
+status // Crea una lista del cliente y la siguiente información de ellos: usuario#, frags, nombre, framerate, latencia, ping, paquetes perdidos %
+stop // Pausa la grabación de una demo
+stopdemo // Pausa la reproducción de una demo
+stopsound // Detiene la reproducción de sonido
+stuffcmds // Usado para inicialiar los comandos del servidor y lo reinicia
+suitvolume "0.250" // Establece el volumen para el traje HEV
+sv_accelerate "10" // Establece la aceleración del jugador en un servidor
+sv_aim "1" // Alterna el autoapuntado para los clientes - * 1  es 'activado', 0 es 'desactivado'
+sv_airaccelerate "10" // Establece la velocidad del jugador en el aire
+sv_airmove "1" // Alterna la habilidad de los clientes para mmoverse en el aire
+sv_allowdownload "1" // Alterna la habilidad de los clientes para descargar modelos y grafitis- * 1  es 'activado', 0 es 'desactivado'
+sv_allowupload "1" // Alterna la habilidad de los clientes para subir modelos y grafitis - * 1  es 'activado', 0 es 'desactivado'
+sv_bounce "1" // Alterna las plataformas de rebote - * 1  es 'activado', 0 es 'desactivado'
+sv_cheats "0" // Alterna el uso de cheats - * 1  es 'activado', 0 es 'desactivado'
+sv_clienttrace "1" // Establece el delimitador de colisiones de los clientes
+sv_clipmode "0" // Alterna el estado de "cliping" de los clientes - * 1  es 'activado', 0 es 'desactivado'
+sv_contact "0"
+sv_downloadurl "0"
+sv_enableoldqueries "0"
+sv_failuretime "0.500"
+sv_filetransfercompression "1"
+sv_filterban "1"
+sv_friction "4" // Establece la fricción
+sv_gravity "800" // Establece la cantidad de gravedad
+sv_instancedbaseline "1"
+sv_lan "1" // Alterna el modo LAN - * 1  es 'activado', 0 es 'desactivado'
+sv_lan_rate "20000"
+sv_logbans "0"
+sv_logblocks "0"
+sv_logrelay "0"
+sv_log_onefile "0"
+sv_log_singleplayer "0"
+sv_maxrate "0" // Establece el máximo valor de subidad de datos de un servidor - Bueno para servidores HPB - **Version 3.0.1.3/4.0.1.3+ only
+sv_maxspeed "320" // Establece la máxima velocidad para los clientes
+sv_maxunlag "0.500"
+sv_maxupdaterate "30"
+sv_maxvelocity "2000" // Establece la máxima velocidad
+sv_minrate "0" // Establece la cantidad mínima dedatos subidos de un servidor - Bueno para servisores LPB - **Version 3.0.1.3/4.0.1.3+ only
+sv_minupdaterate "10"
+sv_newunit "0"
+sv_outofdatetime "1800"
+sv_password "0" // Establece una contraseña para el servidor
+sv_proxies "1"
+sv_rcon_banpenalty "0"
+sv_rcon_maxfailures "10"
+sv_rcon_minfailures "5"
+sv_rcon_minfailuretime "30"
+sv_region "-1"
+sv_send_logos "1"
+sv_send_resources "1"
+sv_skycolor_b "0"
+sv_skycolor_g "0"
+sv_skycolor_r "0"
+sv_skyname "0" // Establece la textura del cielo
+sv_skyvec_x "0"
+sv_skyvec_y "0"
+sv_skyvec_z "0"
+sv_spectatormaxspeed "500" // Establece la velocidad máxima de los espectadores 
+sv_stats "1"
+sv_stepsize "18" // establece el tamaño de aumento automático del monstruo y el jugador  - * Los valores más grandes permiten la escalada automática de pendientes más pronunciadas. 
+sv_stopspeed "100" // Velocidad a la que los jugadores se detienen al correr
+sv_timeout "60" // EStalece el tiempo límite de inactividad
+sv_unlag "1"
+sv_unlagpush "0"
+sv_unlagsamples "1"
+sv_uploadmax "0.500"
+sv_version "112.100"
+sv_visiblemaxplayers "-1"
+sv_voicecodec "0"
+sv_voiceenable "1"
+sv_voicequality "3"
+sv_wateraccelerate "10" // Establece la acelaración de los clientes en el agua
+sv_wateramp "0"
+sv_waterfriction "1" // Establece la fricción bajo el agua
+sv_zmax "4096" // EStablece el tamaño máximo del zbuffer
+swapdemo // Intercambi dos segmento' posiciónes en una demo
+sys_ticrate "100"
+s_2dvolume "0.880" // Volumen máximo de los sonidos 2D - * Rango de 0 a 1.0
+s_a3d "0" // Alterna el soporte de A3D - * 1  es 'activado', 0 es 'desactivado'
+s_automax_distance "30" // Establece la distancia para el volumen de sonido máximo
+s_automin_distance "2" // Establece la distancia para el volumen de sonido mínimo
+s_blipdir "0"
+s_bloat "2" // factor de hinchamiento para polígonos , solo en A3D 2.0 
+s_buffersize "65536" // Establece el tamaño del buffer
+s_disable_a3d // Alterna el deshabilitar A3D - * 1  es 'activado', 0 es 'desactivado'
+s_distance "60" // Ajusta el proporción de juego a mteros, afectando la velocidad, posicionamiento y distancia - * cuanto mayor es el número, más se acerca todo en términos de audio  - rango de 0 a infinito
+s_doppler "0" // Ajusta el doppler - * 1  es 'activado', 0 es 'desactivado', rango de 0 a 10, es muy sensible
+s_eax "0" // Alterna el soporte de EAX - * 1  es 'activado', 0 es 'desactivado'
+s_enable_a3d // Activa el soporte de A3D
+s_geometry "1" // Alterna el renderizado geométrico en A3D 2.0 only - * 1 i1  es 'activado', 0 es 'desactivado'
+s_leafnum "0"
+s_materials "0"
+s_max_distance "1000" // Distancia máxima del oyente antes de que no se aplique el rolloff - * rango de 's_min_distance' a infinito
+s_min_distance "8" // Distancia mínima del oyente antes de que se aplique el rolloff - * rango de 0 a 's_max_distance'
+s_numpolys "200" // Número máximo de polígonos renderizados en A3D 2.0 - poner en 0 esto es como apagar 's_geometry' - * rango de 0 a infinito
+s_occfactor "0.250" // Transmisión del valor del material - Más pequeño el número, menos sonidos pasan por un material - * rango de 0 a 1.0
+s_occlude "1" // Alterna el sonido a través de los materiales (oclusión) solo en A3D 2.0 - * 1  es 'activado', 0 es 'desactivado'
+s_occ_epsilon "1"
+s_polykeep "1000000000"
+s_polysize "10000000"
+s_refdelay "4" // Retraso entre una fuente y su reflejo solo para A3D 2.0  - Más alto el retraso, más tiempo toma la reporducción entre la emisión y el reflejo - * rango de 0 a 100
+s_refgain "0.400" // Ajusta la ganancia con cada reflejo solo para A3D 2.0, donde los efectos de distancia se incrementan: Las altas frecencias son filtradas y el volumen, reducido - * rango de 0 a 10
+s_reflect "1"
+s_reverb "1"
+s_rolloff "1"
+s_show "0"
+s_showtossed "0"
+s_usepvs "1"
+s_verbwet "0.250" // Controla la reverberación para A3D - Más alto el número, sonidos más húmedos - * rango de 0 a 1.0
+team "0" // Alterna el modo de equipos - * 1  es 'activado', 0 es 'desactivado
+tell // Dice un mensjae
+texgamma "2" // Posiblemente establezca la gamma de los textos
+tfc_newmodels "1"
+thirdperson // Activa la vista en tercera persona
+timedemo // Reporoduce <demoname>.dem a los máximos fps y reporta el promedio
+timerefresh // El jugador gira en el mismo lugar y se reporta el promedio de fps al girar
+togglebrowser
+toggleconsole // Alterna la consola - * Usualmente bindeado a '~'
+togglescores
+topcolor "30" // Establece el color superior del modelo
+traceralpha "0.500" // Establece el componente de transparencia del rastro de la bala
+tracerblue "0.400" // Establece el componente azul del rastro de la bala
+tracergreen "0.800" // Establece el componente verde del rastro de la bala
+tracerlength "0.800" // Establece el largo del rastro de la bala
+traceroffset "30" // Establece la desviación del rastro de la bala
+tracerred "0.800" // Establece el componente rojo del rastro de la bala
+tracerspeed "6000" // Establece la velocidad del rastro de la bala
+unbind // Remueve un bind de la tecla <key>
+unbindall // Remueve todos los binds
+unpause
+upload // Sube archivos a un servidor
+user // Crea una lista del modelos, color, nombre y rate or usuario
+users // Crea una lista de los jugadores con su ID correspondiente (#'s generado por el servidor) r Id únicas (id # único por clave de CD asignado por WON) - **Solo Version 3.0.1.3/4.0.1.3+ 
+version // Muestra la versión y la fecha de instalación
+vgui_emulatemouse "0"
+vgui_runscript
+vid_d3d "0" // Alterna el soporte de Direct 3D - * Activa los de cuerpos al morir - * 1  es 'activado', 0 es 'desactivado'
+viewdemo
+viewframe // Activa el mostrar la escritura en los cuadros - * OpenGL only
+viewmodel // Activa la vista de los modelos
+viewnext // Selecciona el modelo siguiente
+viewprev // Selecciona el modelo previo
+viewsize "120" // sets view size
+violence_ablood "0" // Activa la sangre - * 1  es 'activado', 0 es 'desactivado'
+violence_agibs "0" // Activa los de cuerpos al morir - * 1  es 'activado', 0 es 'desactivado'
+violence_hblood "0"
+violence_hgibs "0" // Activa los de cuerpos al morir - * 1  es 'activado', 0 es 'desactivado'
+voice_avggain "0.500"
+voice_clientdebug "0"
+voice_dsound "1"
+voice_eax "0"
+voice_enable "1"
+voice_fadeouttime "0.100"
+voice_forcemicrecord "1"
+voice_inputfromfile "0"
+voice_loopback "0"
+voice_maxgain "5"
+voice_modenable "1"
+voice_overdrive "2"
+voice_overdrivefadetime "0.400"
+voice_profile "0"
+voice_recordtofile "0"
+voice_scale "1"
+voice_showbanned
+voice_showchannels "0"
+voice_showincoming "0"
+volume "0.800" // Establece el volumen del juego
+v_centermove "0.150"
+v_centerspeed "500"
+v_dark "0"
+wait // Detiene las acciones por 1 tick 
+waterroom_type "14"
+waveplaylen
+writecfg
+writeid // Escribe IDs únicas a banned.cfg - **Version 3.0.1.3/4.0.1.3+ only
+writeip // Escribe direcciones IP a listip.cfg
+zoom_sensitivity_ratio "1.200" // Establece la sensibilidad del mouse al usar el zoom de un arma
+_careeraudio
+_restart
+_setgamedir
+_setrenderer
+_setvideomode
+_snd_mixahead "0.100"
+
+
+//Decentjump
+Si encuentras difícil hacer bunny hop, o tu coordinación de saltos está mal, Este script b´sico te ayudará a corregir tus saltos.
+Para usar, reemplaza la tecla +jump con +decentjump.
+
+//Bunnyhop
+A veces llamado auto-bhop, este script hace el bunear muy simple. Cuando presionas la tecla +bunnyhop te quedarás saltando hasta que sueltes la tecla. 
+Para usar, reemplaza la tecla +jump con +bunnyhop.
+
+//Double-duck (box jump / climbing)
+¿Alguna vez te preguntaste cómo hay jugadores que suben cajas a gran velocidad? Es como si estuvieran usando el scrit del climbing. Funciona agachándose, luego rápidamente dejándose de agachar y luego agachándose otra vez, en conjunto resulta en una pequeña elevación sobre el suelo.
+Para usar, asigna unatecla a +box.
+
+//Long Jump
+Muchos jugadores usan un script de long jump, simplifica agacharse y saltar en una sola tecla. Sin embargo, hay 4 diferentes animaciones, 3 de las cuales solo ocurrirán con el uso de un script. Por esta razón recomiendo usar la animación por defecto.
+Para usar, asigna una tecla a +longjump (nota: Tienes que presionar una tecla de movimiento al hacer el script para que funcione).
+
+//Silent Long Jump
+Este script es esencialmente un long jump pero con un salto más corto y sin producir ningún sonido. Tendrás que copiar y pegar el script 'wait' en tu .cfg para usar esto.
+Para usar, asigna una tecla a +silent_lj (nota: debe realizarse desde un punto muerto después de tocar hacia atrás ).
+
+//Walking/Sneaking
+ES un script muy últil en HLDM:AG porque te permite caminar sin hacer ruido.
+Para usar, asigna una tecla a +walk (puedes reemplazar la tecla de +speed a +walk).
+
+//Quick Bow / flecha rápida
+Posiblemente el script más controversial es el script de la ballesta. Funciona haciendo zoom, disparando, y por último cambiar de arma rápidamente a la crossbow, casi instantáneamente.
+Para usar, asigna una tecla a +quickbow.
+
+//Impulse Gauss
+Puede ser usado al moverse o al estar quieto. Debes mantener presionad la tecla de +gauss_jump, saltar, Mirar en la drección que quieres ir soltar la tecla. Luego serás impulsado a la dirección que miraste.
+Para usar, asigna una tecla a +gauss_jump.
+
+//Low Sens
+Si deseas bajar tu sensibilidad al apuntar a larga distancia, por ejemplo, para mejorar tu puntería - ese es el propósito de este script. Neccesitarás configurar tu sensibilidad poor defecto y la nueva sensibilidad.
+Para usar, asigna una tecla a +lowsens y mantenla presionada para ejecutarlo - una vez soltada, regresarás a tu sensibilidad normal.
+
+//Waits
+Si deseas agregar tiempos de espera más grandes entre comandos o al ejecutar un script, este te da una variedad de dónde escoger. Por ejemplo, si necesitas para por 6 frames, simplemente añades wait 2 y wait 4 juntos en un script, así: +attack;wait2;wait4;+reload. Nota: algunos scripts requieren de este script para funcionar, por lo que es reconmendable que lo agregues a tu .cfg. 
+
+//Recharging
+Este script es útil para hacer saber a tus compañeros de equipo que estás en un cargador de vida/HEV.
+PUedes eemplazar la tecla +use coh +use2 o asisgnar una nueva tecla a +use2.
+
+//Drop Weapon
+Si necesitas captar la atención de un compañero de equipo puedes dropearle un arma, este script les dará un arma, dejará un mensaje y hará un sonido. Si quieres dropear un arma específica (por ejemplo, shotgun), puedes reemplazar drop con drop weapon_shotgun.
+Para usar, asigna una tecla a drop_team.
+
+//Realnames
+Un poco conocido script que hace uso de los comandos loadauthid y unloadauthid que son exclusivos de HLDM:AG. Al presionar la tecla de +realnames verás los nombres reales de los jugadores mostrados en el socreboard. Para que esto funcione debes tener el archivo realnames.txt dentro de common\Half-Life\ag folder. 
+Para usar, asigna una tecla a +realnames.
+
+//Demo Recorder
+Este script utiliza "agrecord", perimitiendo grabar individualmente cada demo dentro de tu carpeta ag. También toma automáticamente una captura de pantalla al terminar la demo.
+Para usar, asigna una tecla a demo_record.
+
+//Name Change Toggle
+Este script simplifica las cosas si utilizas varios nicknames en el juego. Te permite asignar una tecla para alternar entre diferentes nicknames. 
+Para usar, asigna una tecla a y reemplaza <nickname> con tus propios nicknames.
+
+//Quick Use
+Un simple script que ejcuta "+use" por un frame sin reducir tu velocidad. Ideal para presionar botones cuando estás buneando.
+Use bind <tecla> quse
