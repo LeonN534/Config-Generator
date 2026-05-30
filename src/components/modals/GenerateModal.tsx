@@ -12,6 +12,7 @@ import { useI18n } from '@/i18n'
 import { useStore } from '@/store'
 import { generateNames } from '@/generators/namesGenerator'
 import { generateWeapons } from '@/generators/weaponsGenerator'
+import { generateSlots } from '@/generators/slotsGenerator'
 
 const INVALID_CHARS = /[\\/:*?"<>|]/g
 
@@ -39,12 +40,13 @@ export default function GenerateModal({ open, onOpenChange }: Props) {
       const state = useStore.getState()
       const namesSection = generateNames(state)
       const weaponsSection = generateWeapons(state.weapons)
+      const slotsSection = generateSlots(state)
 
       const res = await fetch('/assets/base.cfg')
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const base = await res.text()
 
-      const sections = [namesSection, weaponsSection].filter(Boolean)
+      const sections = [namesSection, weaponsSection, slotsSection].filter(Boolean)
       const content = sections.length > 0 ? `${base}\n${sections.join('\n\n')}\n` : base
       const blob = new Blob([content], { type: 'text/plain' })
       const url = URL.createObjectURL(blob)

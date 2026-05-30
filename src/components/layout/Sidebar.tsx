@@ -1,4 +1,4 @@
-import { User, Crosshair, ScrollText, Users, Settings2, Cpu } from 'lucide-react'
+import { User, Crosshair, Layers, ScrollText, Users, Settings2, Cpu } from 'lucide-react'
 import { useI18n } from '@/i18n'
 import type { TabId } from './AppShell'
 
@@ -10,6 +10,7 @@ interface Props {
 const tabs: { id: TabId; labelKey: string; icon: React.ReactNode }[] = [
   { id: 'names', labelKey: 'tab.names', icon: <User className="w-4 h-4" /> },
   { id: 'weapons', labelKey: 'tab.weapons', icon: <Crosshair className="w-4 h-4" /> },
+  { id: 'slots', labelKey: 'tab.slots', icon: <Layers className="w-4 h-4" /> },
   { id: 'scripts', labelKey: 'tab.scripts', icon: <ScrollText className="w-4 h-4" /> },
   { id: 'teambinds', labelKey: 'tab.teambinds', icon: <Users className="w-4 h-4" /> },
   { id: 'hlconfig', labelKey: 'tab.hlconfig', icon: <Settings2 className="w-4 h-4" /> },

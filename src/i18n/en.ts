@@ -21,6 +21,7 @@ export const en = {
 
   'tab.names': 'Names',
   'tab.weapons': 'Weapons',
+  'tab.slots': 'Slots',
   'tab.scripts': 'Scripts',
   'tab.teambinds': 'Team Binds',
   'tab.hlconfig': 'Config. HL',
@@ -40,6 +41,16 @@ export const en = {
   'weapons.bindLabel': 'bind',
   'weapons.preview': 'Preview',
   'weapons.previewHint': 'Focus a bind input to preview the weapon',
+
+  'slots.title': 'Slots',
+  'slots.numpad': 'Bind numeric keypad to slots',
+  'slots.numpadDesc': 'The number keys will be used for weapons, so the numeric keypad will be bound to the slots automatically.',
+  'slots.custom': 'Custom binds',
+  'slots.bindLabel': 'bind',
+  'slots.preview': 'Preview',
+  'slots.previewHint': 'Focus a slot to preview',
+  'slots.noImage': 'No default action',
+  'slots.slotPrefix': 'Slot',
 
   'color.default': 'Default',
   'color.red': 'Red',

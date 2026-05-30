@@ -2,9 +2,10 @@ import { useState } from 'react'
 import Sidebar from '@/components/layout/Sidebar'
 import NamesTab from '@/components/tabs/NamesTab'
 import WeaponsTab from '@/components/tabs/WeaponsTab'
+import SlotsTab from '@/components/tabs/SlotsTab'
 import GenerateModal from '@/components/modals/GenerateModal'
 
-const tabs = ['names', 'weapons', 'scripts', 'teambinds', 'hlconfig', 'agconfig'] as const
+const tabs = ['names', 'weapons', 'slots', 'scripts', 'teambinds', 'hlconfig', 'agconfig'] as const
 
 export type TabId = (typeof tabs)[number]
 
@@ -31,6 +32,7 @@ export default function AppShell() {
         <div className="flex-1 p-6 md:p-8 lg:p-10 min-h-0">
           {activeTab === 'names' && <NamesTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'weapons' && <WeaponsTab onGenerate={() => setShowGenerate(true)} />}
+          {activeTab === 'slots' && <SlotsTab onGenerate={() => setShowGenerate(true)} />}
         </div>
       </main>
 

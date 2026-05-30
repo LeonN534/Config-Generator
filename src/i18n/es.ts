@@ -21,6 +21,7 @@ export const es = {
 
   'tab.names': 'Nombres',
   'tab.weapons': 'Armas',
+  'tab.slots': 'Slots',
   'tab.scripts': 'Scripts',
   'tab.teambinds': 'Team Binds',
   'tab.hlconfig': 'Config. HL',
@@ -40,6 +41,16 @@ export const es = {
   'weapons.bindLabel': 'tecla',
   'weapons.preview': 'Vista previa',
   'weapons.previewHint': 'Enfoca una tecla para previsualizar el arma',
+
+  'slots.title': 'Slots',
+  'slots.numpad': 'Asignar teclado numérico a slots',
+  'slots.numpadDesc': 'Las teclas numéricas quedarán libres para las armas, el teclado numérico controlará los slots automáticamente.',
+  'slots.custom': 'Teclas personalizadas',
+  'slots.bindLabel': 'tecla',
+  'slots.preview': 'Vista previa',
+  'slots.previewHint': 'Enfoca un slot para previsualizar',
+  'slots.noImage': 'Sin acción predeterminada',
+  'slots.slotPrefix': 'Slot',
 
   'color.default': 'Por defecto',
   'color.red': 'Rojo',

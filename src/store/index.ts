@@ -29,7 +29,16 @@ interface WeaponsSlice {
   setFocusedWeapon: (id: string | null) => void
 }
 
-type Store = NamesSlice & WeaponsSlice
+interface SlotsSlice {
+  slotMode: 'numpad' | 'custom'
+  slotBinds: string[]
+  focusedSlot: number | null
+  setSlotMode: (mode: 'numpad' | 'custom') => void
+  setSlotBind: (index: number, key: string) => void
+  setFocusedSlot: (index: number | null) => void
+}
+
+type Store = NamesSlice & WeaponsSlice & SlotsSlice
 
 const WEAPON_IDS = [
   '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
@@ -66,4 +75,16 @@ export const useStore = create<Store>((set) => ({
       ),
     })),
   setFocusedWeapon: (id) => set({ focusedWeapon: id }),
+
+  slotMode: 'numpad',
+  slotBinds: Array(10).fill(''),
+  focusedSlot: null,
+  setSlotMode: (mode) => set({ slotMode: mode }),
+  setSlotBind: (index, key) =>
+    set((state) => {
+      const slotBinds = [...state.slotBinds]
+      slotBinds[index] = key
+      return { slotBinds }
+    }),
+  setFocusedSlot: (index) => set({ focusedSlot: index }),
 }))
