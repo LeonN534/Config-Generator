@@ -1,7 +1,14 @@
-import { Volume2, VolumeX } from 'lucide-react'
+import { Home, Keyboard, Volume2, VolumeX } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 import { useAudio } from '@/hooks/useAudio'
 import { useI18n } from '@/i18n'
+import { Link, useLocation } from 'react-router-dom'
 
 const GitHubIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
@@ -10,36 +17,75 @@ const GitHubIcon = () => (
 )
 
 export default function Header() {
-  const { playing, toggle: toggleMusic } = useAudio('/TriageAtDawn.mp3')
+  const { playing, toggle: toggleMusic } = useAudio('/assets/TriageAtDawn.mp3')
   const { t, lang, toggleLang } = useI18n()
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 h-16 bg-black/40 backdrop-blur-sm border-b border-white/5">
-      <a
-        href="https://github.com/LeonN534/Config-Generator"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white/70 hover:text-white transition-colors"
-      >
-        <GitHubIcon />
-        <span className="sr-only">Source code on GitHub</span>
-      </a>
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 h-14 bg-black/60 backdrop-blur-sm border-b border-white/5">
+      {!isHome && (
+        <Link
+          to="/"
+          className="text-white/50 hover:text-white transition-colors"
+        >
+          <Home className="w-5 h-5" />
+          <span className="sr-only">{t('header.home')}</span>
+        </Link>
+      )}
+      {isHome && <div />}
 
       <div className="flex items-center gap-1">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white/60 hover:text-[#f37b22] hover:bg-[#f37b22]/[0.08] font-body text-xs font-medium gap-1.5 border border-white/[0.06] hover:border-[#f37b22]/20"
+            >
+              <Keyboard className="w-3.5 h-3.5" />
+              {t('header.keyboard')}
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="bg-[#0d0d0d] border-white/[0.06] max-w-[98vw] w-[98vw] max-h-[95vh] p-4
+            [&>button]:absolute [&>button]:right-6 [&>button]:top-6
+            [&>button]:bg-black/50 [&>button]:backdrop-blur-sm
+            [&>button]:w-9 [&>button]:h-9 [&>button]:rounded-full
+            [&>button]:flex [&>button]:items-center [&>button]:justify-center
+            [&>button]:text-white [&>button]:opacity-100
+            [&>button]:hover:bg-black/70 [&>button]:hover:text-white
+            [&>button>svg]:w-5 [&>button>svg]:h-5">
+            <DialogTitle className="sr-only">Key names</DialogTitle>
+            <img
+              src={lang === 'es' ? '/assets/key-names-es.png' : '/assets/key-names.png'}
+              alt="Keyboard key names reference"
+              className="w-full h-auto rounded-lg max-h-[88vh] object-contain"
+            />
+          </DialogContent>
+        </Dialog>
+        <a
+          href="https://github.com/LeonN534/Config-Generator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white/50 hover:text-white transition-colors mr-2"
+        >
+          <GitHubIcon />
+          <span className="sr-only">{t('header.github')}</span>
+        </a>
         <Button
           variant="ghost"
           size="icon"
           onClick={toggleMusic}
-          className="text-white/70 hover:text-white hover:bg-white/10"
+          className="text-white/50 hover:text-white hover:bg-white/5"
         >
           {playing ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-          <span className="sr-only">Toggle music</span>
+          <span className="sr-only">{t('header.music')}</span>
         </Button>
         <Button
           variant="ghost"
           size="icon"
           onClick={toggleLang}
-          className="text-white/70 hover:text-white hover:bg-white/10 font-body text-xs font-semibold w-9"
+          className="text-white/50 hover:text-white hover:bg-white/5 font-body text-xs font-semibold w-9"
         >
           {lang === 'en' ? 'EN' : 'ES'}
           <span className="sr-only">{t('header.language')}</span>

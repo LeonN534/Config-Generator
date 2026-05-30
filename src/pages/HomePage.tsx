@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Header from '@/components/layout/Header'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { useI18n } from '@/i18n'
 import RecommendationModal from '@/components/modals/RecommendationModal'
@@ -7,14 +7,13 @@ import RecommendationModal from '@/components/modals/RecommendationModal'
 export default function HomePage() {
   const { t } = useI18n()
   const [showModal, setShowModal] = useState(false)
+  const navigate = useNavigate()
+
   return (
     <div className="relative min-h-screen flex flex-col bg-[#0a0a0a] overflow-hidden">
-
-      {/* Background layers */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f37b22]/10" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_center,#f37b22/8,transparent_70%)]" />
 
-      {/* Grid pattern */}
       <div
         className="absolute inset-0 opacity-15"
         style={{
@@ -24,13 +23,10 @@ export default function HomePage() {
         }}
       />
 
-      {/* Bottom decorative lines */}
       <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-1 pb-8">
         <div className="w-32 h-px bg-gradient-to-r from-transparent via-[#f37b22]/40 to-transparent" />
         <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#f37b22]/20 to-transparent" />
       </div>
-
-      <Header />
 
       <main className="relative flex-1 flex flex-col items-center justify-center px-4">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
@@ -62,7 +58,7 @@ export default function HomePage() {
 
       <RecommendationModal
         open={showModal}
-        onContinue={() => setShowModal(false)}
+        onContinue={() => { setShowModal(false); navigate('/app') }}
       />
     </div>
   )
