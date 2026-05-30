@@ -2,9 +2,10 @@ import { useCallback, useRef, useState } from 'react'
 import { type DragEndEvent } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useI18n } from '@/i18n'
+import { useStore } from '@/store'
 import ColorPicker from '@/components/shared/ColorPicker'
 import ColorInput, { type ColorInputHandle } from '@/components/shared/ColorInput'
-import DraggableNickList, { type NickItem } from '@/components/shared/DraggableNickList'
+import DraggableNickList from '@/components/shared/DraggableNickList'
 import SpecialKeyButtons from '@/components/shared/SpecialKeyButtons'
 
 const COLORS = [
@@ -21,10 +22,16 @@ const COLORS = [
 
 export default function NamesTab() {
   const { t, lang } = useI18n()
-  const [mainNick, setMainNick] = useState('')
-  const [bindKey, setBindKey] = useState('')
+  const mainNick = useStore((s) => s.mainNick)
+  const setMainNick = useStore((s) => s.setMainNick)
+  const bindKey = useStore((s) => s.bindKey)
+  const setBindKey = useStore((s) => s.setBindKey)
+  const nickItems = useStore((s) => s.nickItems)
+  const reorderNickItems = useStore((s) => s.reorderNickItems)
+  const addNickItem = useStore((s) => s.addNickItem)
+  const removeNickItem = useStore((s) => s.removeNickItem)
+  const updateNickItem = useStore((s) => s.updateNickItem)
   const [bindFocused, setBindFocused] = useState(false)
-  const [nickItems, setNickItems] = useState<NickItem[]>([{ id: 'nick-0', value: '' }])
   const bindInputRef = useRef<HTMLInputElement>(null)
   const mainNickRef = useRef<ColorInputHandle>(null)
   const quickNickRefs = useRef<Record<string, ColorInputHandle | null>>({})
@@ -42,27 +49,16 @@ export default function NamesTab() {
     [],
   )
 
-  const handleDragEnd = useCallback((event: DragEndEvent) => {
-    const { active, over } = event
-    if (!over || active.id === over.id) return
-    setNickItems((prev) => {
-      const oldIndex = prev.findIndex((i) => i.id === active.id)
-      const newIndex = prev.findIndex((i) => i.id === over.id)
-      return arrayMove(prev, oldIndex, newIndex)
-    })
-  }, [])
-
-  const addNickItem = useCallback(() => {
-    setNickItems((prev) => [...prev, { id: `nick-${Date.now()}`, value: '' }])
-  }, [])
-
-  const removeNickItem = useCallback((id: string) => {
-    setNickItems((prev) => prev.filter((i) => i.id !== id))
-  }, [])
-
-  const updateNickItem = useCallback((id: string, value: string) => {
-    setNickItems((prev) => prev.map((i) => (i.id === id ? { ...i, value } : i)))
-  }, [])
+  const handleDragEnd = useCallback(
+    (event: DragEndEvent) => {
+      const { active, over } = event
+      if (!over || active.id === over.id) return
+      const oldIndex = nickItems.findIndex((i) => i.id === active.id)
+      const newIndex = nickItems.findIndex((i) => i.id === over.id)
+      reorderNickItems(arrayMove(nickItems, oldIndex, newIndex))
+    },
+    [nickItems, reorderNickItems],
+  )
 
   return (
     <div className="flex gap-8 h-full">

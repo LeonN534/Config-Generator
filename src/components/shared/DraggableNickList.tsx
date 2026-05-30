@@ -17,11 +17,7 @@ import { CSS } from '@dnd-kit/utilities'
 import { GripVertical, Plus, X } from 'lucide-react'
 import { useI18n } from '@/i18n'
 import ColorInput, { type ColorInputHandle } from '@/components/shared/ColorInput'
-
-export interface NickItem {
-  id: string
-  value: string
-}
+import type { NickItem } from '@/store'
 
 interface Props {
   items: NickItem[]

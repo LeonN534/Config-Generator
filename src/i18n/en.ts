@@ -45,4 +45,14 @@ export const en = {
   'color.purple': 'Purple',
   'color.gray': 'Gray',
   'color.white': 'White',
+
+  'generate.button': 'Generate .cfg',
+  'generate.title': 'Generate Config',
+  'generate.description': 'Choose a name for your configuration file.',
+  'generate.filename': 'File name',
+  'generate.filenamePlaceholder': 'my-config',
+  'generate.download': 'Download',
+  'generate.cancel': 'Cancel',
+  'generate.error': 'Could not load the base configuration file.',
+  'generate.emptyName': 'Please enter a file name.',
 } as const

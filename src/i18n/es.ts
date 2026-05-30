@@ -45,4 +45,14 @@ export const es = {
   'color.purple': 'Púrpura',
   'color.gray': 'Gris',
   'color.white': 'Blanco',
+
+  'generate.button': 'Generar .cfg',
+  'generate.title': 'Generar Config',
+  'generate.description': 'Elige un nombre para tu archivo de configuración.',
+  'generate.filename': 'Nombre del archivo',
+  'generate.filenamePlaceholder': 'mi-config',
+  'generate.download': 'Descargar',
+  'generate.cancel': 'Cancelar',
+  'generate.error': 'No se pudo cargar el archivo de configuración base.',
+  'generate.emptyName': 'Ingresa un nombre de archivo.',
 } as const
