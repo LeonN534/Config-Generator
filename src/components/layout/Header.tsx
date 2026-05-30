@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useAudio } from '@/hooks/useAudio'
+import { useI18n } from '@/i18n'
 
 const GitHubIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
@@ -11,7 +11,7 @@ const GitHubIcon = () => (
 
 export default function Header() {
   const { playing, toggle: toggleMusic } = useAudio('/TriageAtDawn.mp3')
-  const [langEN, setLangEN] = useState(true)
+  const { t, lang, toggleLang } = useI18n()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 h-16 bg-black/40 backdrop-blur-sm border-b border-white/5">
@@ -38,11 +38,11 @@ export default function Header() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setLangEN(!langEN)}
+          onClick={toggleLang}
           className="text-white/70 hover:text-white hover:bg-white/10 font-body text-xs font-semibold w-9"
         >
-          {langEN ? 'EN' : 'ES'}
-          <span className="sr-only">Toggle language</span>
+          {lang === 'en' ? 'EN' : 'ES'}
+          <span className="sr-only">{t('header.language')}</span>
         </Button>
       </div>
     </header>

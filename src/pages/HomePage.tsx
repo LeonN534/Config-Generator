@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import Header from '@/components/layout/Header'
 import { Button } from '@/components/ui/button'
+import { useI18n } from '@/i18n'
+import RecommendationModal from '@/components/modals/RecommendationModal'
 
 export default function HomePage() {
+  const { t } = useI18n()
+  const [showModal, setShowModal] = useState(false)
   return (
     <div className="relative min-h-screen flex flex-col bg-[#0a0a0a] overflow-hidden">
 
@@ -31,16 +36,16 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <img
             src="/logo.png"
-            alt="Config Generator"
+            alt={t('main.hero.alt')}
             className="w-20 sm:w-24 md:w-32"
           />
           <h1 className="hidden md:block text-4xl sm:text-5xl lg:text-7xl font-display text-[#f37b22] tracking-tight leading-none">
-            Config Generator
+            {t('app.title')}
           </h1>
         </div>
 
         <p className="mt-6 text-muted-foreground text-sm sm:text-base font-body text-center max-w-md">
-          Generate your Half-Life userconfig.cfg with ease
+          {t('app.subtitle')}
         </p>
 
         <Button
@@ -49,11 +54,16 @@ export default function HomePage() {
                      bg-[#f37b22] hover:bg-[#d46612] text-white
                      shadow-[0_0_20px_rgba(243,123,34,0.3)] hover:shadow-[0_0_30px_rgba(243,123,34,0.5)]
                      transition-all duration-200 cursor-pointer"
-          onClick={() => console.log('START')}
+          onClick={() => setShowModal(true)}
         >
-          Start
+          {t('main.start')}
         </Button>
       </main>
+
+      <RecommendationModal
+        open={showModal}
+        onContinue={() => setShowModal(false)}
+      />
     </div>
   )
 }
