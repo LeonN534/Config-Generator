@@ -36,6 +36,11 @@ export const es = {
   'names.specialKeysFocusHint': 'Haz clic en el campo de bind de arriba para activar estas teclas.',
   'names.addNick': 'Agregar nick',
 
+  'weapons.title': 'Armas',
+  'weapons.bindLabel': 'tecla',
+  'weapons.preview': 'Vista previa',
+  'weapons.previewHint': 'Enfoca una tecla para previsualizar el arma',
+
   'color.default': 'Por defecto',
   'color.red': 'Rojo',
   'color.green': 'Verde',

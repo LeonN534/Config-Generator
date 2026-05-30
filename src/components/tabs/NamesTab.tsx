@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react'
+import { Download } from 'lucide-react'
 import { type DragEndEvent } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useI18n } from '@/i18n'
@@ -7,6 +8,11 @@ import ColorPicker from '@/components/shared/ColorPicker'
 import ColorInput, { type ColorInputHandle } from '@/components/shared/ColorInput'
 import DraggableNickList from '@/components/shared/DraggableNickList'
 import SpecialKeyButtons from '@/components/shared/SpecialKeyButtons'
+import { Button } from '@/components/ui/button'
+
+interface Props {
+  onGenerate: () => void
+}
 
 const COLORS = [
   { hex: '#ffb300', key: 'color.default', code: '^0' },
@@ -20,7 +26,7 @@ const COLORS = [
   { hex: '#ffffff', key: 'color.white', code: '^8' },
 ]
 
-export default function NamesTab() {
+export default function NamesTab({ onGenerate }: Props) {
   const { t, lang } = useI18n()
   const mainNick = useStore((s) => s.mainNick)
   const setMainNick = useStore((s) => s.setMainNick)
@@ -61,9 +67,9 @@ export default function NamesTab() {
   )
 
   return (
-    <div className="flex gap-8 h-full">
+    <div className="flex justify-center gap-8 h-full">
       {/* Left panel */}
-      <div className="flex-1 max-w-xl flex flex-col min-h-0">
+      <div className="w-full max-w-xl flex flex-col min-h-0">
         <section className="flex-shrink-0">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-1 h-4 bg-[#f37b22]/60 rounded-full" />
@@ -176,6 +182,18 @@ export default function NamesTab() {
                   ? t('names.specialKeysHint')
                   : t('names.specialKeysFocusHint')}
               </p>
+            </div>
+
+            <div className="pt-2 border-t border-white/[0.06]">
+              <Button
+                onClick={onGenerate}
+                className="w-full bg-[#f37b22] hover:bg-[#d46612] text-white font-body font-semibold
+                           shadow-[0_0_16px_rgba(243,123,34,0.25)] hover:shadow-[0_0_24px_rgba(243,123,34,0.4)]
+                           transition-all duration-200 cursor-pointer py-3"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                {t('generate.button')}
+              </Button>
             </div>
           </div>
         </div>

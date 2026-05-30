@@ -1,4 +1,5 @@
 import type { NickItem } from '@/store'
+import { generateTitle, normalizeBindKey } from './titleHelper'
 
 function stripDefault(code: string): string {
   return code.replace(/^\^0/, '')
@@ -20,14 +21,11 @@ export function generateNames(state: NamesState): string {
   if (!hasMainNick && !hasQuickNicks) return ''
 
   const lines: string[] = [
-    '//',
-    '//    N A M E S',
-    '//    *********',
-    '//',
-    '',
+    generateTitle('NAMES'),
   ]
 
   if (hasMainNick) {
+    lines.push('')
     lines.push(`name\t"${mainNick}"`)
   }
 
@@ -46,7 +44,9 @@ export function generateNames(state: NamesState): string {
     lines.push(`alias\t"nick${N + 1}"\t\t"${closingCmd}"`)
 
     lines.push('')
-    lines.push(`bind\t"${state.bindKey}"\t\t"names"`)
+    const norm = normalizeBindKey(state.bindKey)
+    const sep = `"${norm}"`.length > 7 ? '\t' : '\t\t'
+    lines.push(`bind\t"${norm}"${sep}"names"`)
   }
 
   return lines.join('\n')

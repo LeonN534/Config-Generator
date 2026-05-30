@@ -36,6 +36,11 @@ export const en = {
   'names.specialKeysFocusHint': 'Click the bind input above to enable these keys.',
   'names.addNick': 'Add nick',
 
+  'weapons.title': 'Weapons',
+  'weapons.bindLabel': 'bind',
+  'weapons.preview': 'Preview',
+  'weapons.previewHint': 'Focus a bind input to preview the weapon',
+
   'color.default': 'Default',
   'color.red': 'Red',
   'color.green': 'Green',

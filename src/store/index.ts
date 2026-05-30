@@ -17,7 +17,27 @@ interface NamesSlice {
   setBindKey: (key: string) => void
 }
 
-export const useStore = create<NamesSlice>((set) => ({
+export interface WeaponBinding {
+  weaponId: string
+  bindKey: string
+}
+
+interface WeaponsSlice {
+  weapons: WeaponBinding[]
+  focusedWeapon: string | null
+  setWeaponBind: (weaponId: string, key: string) => void
+  setFocusedWeapon: (id: string | null) => void
+}
+
+type Store = NamesSlice & WeaponsSlice
+
+const WEAPON_IDS = [
+  '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
+  'handgrenade', 'handgun', 'hornetgun', 'magnum', 'rpg',
+  'satchel', 'shotgun', 'snarks', 'tripmine',
+]
+
+export const useStore = create<Store>((set) => ({
   mainNick: '',
   nickItems: [{ id: 'nick-0', value: '' }],
   bindKey: '',
@@ -36,4 +56,14 @@ export const useStore = create<NamesSlice>((set) => ({
     })),
   reorderNickItems: (items) => set({ nickItems: items }),
   setBindKey: (key) => set({ bindKey: key }),
+
+  weapons: WEAPON_IDS.map((id) => ({ weaponId: id, bindKey: '' })),
+  focusedWeapon: null,
+  setWeaponBind: (weaponId, key) =>
+    set((state) => ({
+      weapons: state.weapons.map((w) =>
+        w.weaponId === weaponId ? { ...w, bindKey: key } : w,
+      ),
+    })),
+  setFocusedWeapon: (id) => set({ focusedWeapon: id }),
 }))
