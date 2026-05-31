@@ -49,6 +49,20 @@ export default function SlotsTab({ onGenerate }: Props) {
             <input
               type="radio"
               name="slotMode"
+              checked={slotMode === 'none'}
+              onChange={() => setSlotMode('none')}
+              className="mt-0.5 accent-[#f37b22] cursor-pointer"
+            />
+            <div>
+              <span className="text-sm text-white/80 font-body group-hover:text-white transition-colors">
+                {t('slots.none')}
+              </span>
+            </div>
+          </label>
+          <label className="flex items-start gap-3 cursor-pointer group">
+            <input
+              type="radio"
+              name="slotMode"
               checked={slotMode === 'numpad'}
               onChange={() => setSlotMode('numpad')}
               className="mt-0.5 accent-[#f37b22] cursor-pointer"
@@ -84,12 +98,16 @@ export default function SlotsTab({ onGenerate }: Props) {
               key={index}
               role="button"
               tabIndex={-1}
-              onClick={() => handleRowClick(index)}
+              onClick={() => slotMode !== 'none' && handleRowClick(index)}
               onKeyDown={() => {}}
-              className={`flex items-center gap-3 px-3 py-2 rounded-lg border transition-all cursor-pointer ${
+              className={`flex items-center gap-3 px-3 py-2 rounded-lg border transition-all ${
+                slotMode !== 'none' && 'cursor-pointer'
+              } ${
                 focusedSlot === index
                   ? 'bg-[#f37b22]/5 border-[#f37b22]/25'
-                  : 'bg-white/[0.03] border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12]'
+                  : slotMode !== 'none'
+                  ? 'bg-white/[0.03] border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12]'
+                  : 'bg-white/[0.03] border-white/[0.06] opacity-50'
               }`}
             >
               <div className="w-9 h-9 flex items-center justify-center flex-shrink-0 bg-white/[0.04] rounded">
@@ -114,20 +132,23 @@ export default function SlotsTab({ onGenerate }: Props) {
                   ref={(el) => { inputRefs.current[index] = el }}
                   type="text"
                   value={slotMode === 'numpad' ? NUMPAD_DISPLAY[index] : slotBinds[index]}
-                  readOnly={slotMode === 'numpad'}
+                  readOnly={slotMode !== 'custom'}
                   onChange={(e) => {
                     if (slotMode === 'custom') {
                       const val = e.target.value.toUpperCase()
                       if (val.length <= 1) setSlotBind(index, val)
                     }
                   }}
-                  onFocus={() => { setFocusedSlot(index); setFocusedLocal(true) }}
+                  onFocus={() => {
+                    if (slotMode === 'none') return
+                    setFocusedSlot(index); setFocusedLocal(true)
+                  }}
                   onBlur={() => { setFocusedSlot(null); setFocusedLocal(false) }}
                   maxLength={1}
                   className={`w-24 bg-white/[0.04] border border-white/[0.08] rounded-lg px-2.5 py-1.5 text-sm text-white font-body text-center
                              focus:outline-none focus:border-[#f37b22]/40 focus:bg-[#f37b22]/[0.03]
                              focus:shadow-[0_0_12px_rgba(243,123,34,0.08)] transition-all uppercase
-                             ${slotMode === 'numpad' ? 'text-white/30 cursor-default' : ''}`}
+                             ${slotMode !== 'custom' ? 'text-white/20 cursor-default' : ''}`}
                 />
               </div>
             </div>
@@ -181,11 +202,13 @@ export default function SlotsTab({ onGenerate }: Props) {
               </div>
               <SpecialKeyButtons
                 onSelect={handleSpecialKey}
-                disabled={!focusedLocal || slotMode === 'numpad'}
+                disabled={!focusedLocal || slotMode !== 'custom'}
               />
               <p className="text-[10px] text-white/15 font-body mt-2 leading-relaxed">
                 {focusedLocal && slotMode === 'custom'
                   ? t('names.specialKeysHint')
+                  : slotMode === 'none'
+                  ? t('slots.noneHint')
                   : t('names.specialKeysFocusHint')}
               </p>
             </div>

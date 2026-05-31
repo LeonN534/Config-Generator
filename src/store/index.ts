@@ -30,15 +30,26 @@ interface WeaponsSlice {
 }
 
 interface SlotsSlice {
-  slotMode: 'numpad' | 'custom'
+  slotMode: 'numpad' | 'custom' | 'none'
   slotBinds: string[]
   focusedSlot: number | null
-  setSlotMode: (mode: 'numpad' | 'custom') => void
+  setSlotMode: (mode: 'numpad' | 'custom' | 'none') => void
   setSlotBind: (index: number, key: string) => void
   setFocusedSlot: (index: number | null) => void
 }
 
-type Store = NamesSlice & WeaponsSlice & SlotsSlice
+interface ScriptsSlice {
+  scriptBinds: string[]
+  focusedScript: number | null
+  autobunnyhopMode: 'steam' | 'nosteam'
+  lowSensitivityValue: string
+  setScriptBind: (index: number, key: string) => void
+  setFocusedScript: (index: number | null) => void
+  setAutobunnyhopMode: (mode: 'steam' | 'nosteam') => void
+  setLowSensitivityValue: (value: string) => void
+}
+
+type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice
 
 const WEAPON_IDS = [
   '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
@@ -76,7 +87,7 @@ export const useStore = create<Store>((set) => ({
     })),
   setFocusedWeapon: (id) => set({ focusedWeapon: id }),
 
-  slotMode: 'numpad',
+  slotMode: 'none',
   slotBinds: Array(10).fill(''),
   focusedSlot: null,
   setSlotMode: (mode) => set({ slotMode: mode }),
@@ -87,4 +98,18 @@ export const useStore = create<Store>((set) => ({
       return { slotBinds }
     }),
   setFocusedSlot: (index) => set({ focusedSlot: index }),
+
+  scriptBinds: Array(14).fill(''),
+  focusedScript: null,
+  autobunnyhopMode: 'steam',
+  setScriptBind: (index, key) =>
+    set((state) => {
+      const scriptBinds = [...state.scriptBinds]
+      scriptBinds[index] = key
+      return { scriptBinds }
+    }),
+  setFocusedScript: (index) => set({ focusedScript: index }),
+  setAutobunnyhopMode: (mode) => set({ autobunnyhopMode: mode }),
+  lowSensitivityValue: '',
+  setLowSensitivityValue: (value) => set({ lowSensitivityValue: value }),
 }))

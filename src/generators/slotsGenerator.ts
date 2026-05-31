@@ -9,6 +9,8 @@ export function generateSlots(state: {
   slotMode: string
   slotBinds: string[]
 }): string {
+  if (state.slotMode === 'none') return ''
+
   const lines: string[] = [
     generateTitle('SLOTS'),
     '',

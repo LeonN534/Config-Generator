@@ -3,6 +3,7 @@ import Sidebar from '@/components/layout/Sidebar'
 import NamesTab from '@/components/tabs/NamesTab'
 import WeaponsTab from '@/components/tabs/WeaponsTab'
 import SlotsTab from '@/components/tabs/SlotsTab'
+import ScriptsTab from '@/components/tabs/ScriptsTab'
 import GenerateModal from '@/components/modals/GenerateModal'
 
 const tabs = ['names', 'weapons', 'slots', 'scripts', 'teambinds', 'hlconfig', 'agconfig'] as const
@@ -33,6 +34,7 @@ export default function AppShell() {
           {activeTab === 'names' && <NamesTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'weapons' && <WeaponsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'slots' && <SlotsTab onGenerate={() => setShowGenerate(true)} />}
+          {activeTab === 'scripts' && <ScriptsTab onGenerate={() => setShowGenerate(true)} />}
         </div>
       </main>
 
