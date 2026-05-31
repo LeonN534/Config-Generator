@@ -39,9 +39,12 @@ export default function ScriptsTab({ onGenerate }: Props) {
   const [focusedLocal, setFocusedLocal] = useState(false)
   const [showQuTooltip, setShowQuTooltip] = useState(false)
   const [quTooltipPos, setQuTooltipPos] = useState({ x: 0, y: 0 })
+  const [showLsTooltip, setShowLsTooltip] = useState(false)
+  const [lsTooltipPos, setLsTooltipPos] = useState({ x: 0, y: 0 })
   const inputRefs = useRef<Record<number, HTMLInputElement | null>>({})
   const lsSensRef = useRef<HTMLInputElement | null>(null)
   const quIconRef = useRef<HTMLSpanElement>(null)
+  const lsIconRef = useRef<HTMLSpanElement>(null)
 
   const handleSpecialKey = useCallback((key: string) => {
     if (focusedScript === null) return
@@ -96,6 +99,22 @@ export default function ScriptsTab({ onGenerate }: Props) {
                       }
                     }}
                     onMouseLeave={() => setShowQuTooltip(false)}
+                  >
+                    <HelpCircle className="w-3.5 h-3.5 text-white/30 hover:text-[#f37b22] transition-colors cursor-help" />
+                  </span>
+                )}
+                {index === 12 && (
+                  <span
+                    ref={lsIconRef}
+                    className="flex-shrink-0"
+                    onMouseEnter={() => {
+                      if (lsIconRef.current) {
+                        const r = lsIconRef.current.getBoundingClientRect()
+                        setLsTooltipPos({ x: r.right + 8, y: r.top + r.height / 2 })
+                        setShowLsTooltip(true)
+                      }
+                    }}
+                    onMouseLeave={() => setShowLsTooltip(false)}
                   >
                     <HelpCircle className="w-3.5 h-3.5 text-white/30 hover:text-[#f37b22] transition-colors cursor-help" />
                   </span>
@@ -232,8 +251,15 @@ export default function ScriptsTab({ onGenerate }: Props) {
           className="fixed bg-[#1a1a1a] border border-white/[0.08] rounded-lg px-3 py-1.5 text-[11px] text-white/70 font-body whitespace-nowrap shadow-lg z-50 pointer-events-none"
           style={{ left: quTooltipPos.x, top: quTooltipPos.y, transform: 'translateY(-50%)' }}
         >
-          This key replaces the default +use command. It cannot be used
-          together with the Using team communication bind.
+          {t('scripts.quickUseTooltip')}
+        </div>
+      )}
+      {showLsTooltip && (
+        <div
+          className="fixed bg-[#1a1a1a] border border-white/[0.08] rounded-lg px-3 py-1.5 text-[11px] text-white/70 font-body whitespace-nowrap shadow-lg z-50 pointer-events-none"
+          style={{ left: lsTooltipPos.x, top: lsTooltipPos.y, transform: 'translateY(-50%)' }}
+        >
+          {t('scripts.lowSensitivityTooltip')}
         </div>
       )}
     </div>

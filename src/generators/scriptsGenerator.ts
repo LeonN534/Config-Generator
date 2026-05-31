@@ -4,6 +4,7 @@ export function generateScripts(
   scriptBinds: string[],
   autobunnyhopMode: 'steam' | 'nosteam',
   lowSensitivityValue: string,
+  defaultSensitivity = '',
 ): string {
   const blocks: string[] = []
 
@@ -155,12 +156,16 @@ export function generateScripts(
   // Low Sensitivity
   const lsKey = scriptBinds[12]?.trim()
   const lsVal = lowSensitivityValue?.trim()
-  if (lsKey && lsVal) {
+  if (lsKey) {
     const key = normalizeBindKey(lsKey)
+    const newSens = lsVal || '1'
+    const defSens = defaultSensitivity?.trim() || '1'
     blocks.push(
       '//\tLow Sensitivity\n'
       + '//\t***************\n\n'
-      + `bind\t"${key}"\t\t"sensitivity ${lsVal}"`,
+      + `alias\t"+lowsens"\t\t"sensitivity ${newSens}"\n`
+      + `alias\t"-lowsens"\t\t"sensitivity ${defSens}"\n`
+      + `bind\t"${key}"\t\t"+lowsens"`,
     )
   }
 

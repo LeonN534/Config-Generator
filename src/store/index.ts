@@ -111,7 +111,40 @@ interface BasicConfigSlice {
   setMaxFps: (value: string) => void
 }
 
-type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice & TeamBindsSlice & BasicConfigSlice
+interface GameplaySlice {
+  optimizedVideo: boolean
+  optimizedSound: boolean
+  optimizedConnection: boolean
+  customTextures: boolean
+  autoSwitchBetter: boolean
+  hideCorpses: boolean
+  hideExplosionMarks: boolean
+  showWeaponModel: boolean
+  includeChangeMapAliases: boolean
+  includeChangeModelAliases: boolean
+  includeSmilesAliases: boolean
+  includeSoundFix: boolean
+  includeSpectateAlias: boolean
+  forceEnemyModel: string
+  forceTeammateModel: string
+  setOptimizedVideo: (value: boolean) => void
+  setOptimizedSound: (value: boolean) => void
+  setOptimizedConnection: (value: boolean) => void
+  setCustomTextures: (value: boolean) => void
+  setAutoSwitchBetter: (value: boolean) => void
+  setHideCorpses: (value: boolean) => void
+  setHideExplosionMarks: (value: boolean) => void
+  setShowWeaponModel: (value: boolean) => void
+  setIncludeChangeMapAliases: (value: boolean) => void
+  setIncludeChangeModelAliases: (value: boolean) => void
+  setIncludeSmilesAliases: (value: boolean) => void
+  setIncludeSoundFix: (value: boolean) => void
+  setIncludeSpectateAlias: (value: boolean) => void
+  setForceEnemyModel: (value: string) => void
+  setForceTeammateModel: (value: string) => void
+}
+
+type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice & TeamBindsSlice & BasicConfigSlice & GameplaySlice
 
 const WEAPON_IDS = [
   '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
@@ -237,4 +270,35 @@ export const useStore = create<Store>((set) => ({
   setShowFps: (value) => set({ showFps: value }),
   setVsync: (value) => set({ vsync: value }),
   setMaxFps: (value) => set({ maxFps: value }),
+
+  optimizedVideo: false,
+  optimizedSound: false,
+  optimizedConnection: false,
+  customTextures: false,
+  autoSwitchBetter: true,
+  hideCorpses: false,
+  hideExplosionMarks: false,
+  showWeaponModel: true,
+  includeChangeMapAliases: false,
+  includeChangeModelAliases: false,
+  includeSmilesAliases: false,
+  includeSoundFix: false,
+  includeSpectateAlias: false,
+  forceEnemyModel: '',
+  forceTeammateModel: '',
+  setOptimizedVideo: (value) => set({ optimizedVideo: value }),
+  setOptimizedSound: (value) => set({ optimizedSound: value }),
+  setOptimizedConnection: (value) => set({ optimizedConnection: value }),
+  setCustomTextures: (value) => set({ customTextures: value }),
+  setAutoSwitchBetter: (value) => set({ autoSwitchBetter: value }),
+  setHideCorpses: (value) => set({ hideCorpses: value }),
+  setHideExplosionMarks: (value) => set({ hideExplosionMarks: value }),
+  setShowWeaponModel: (value) => set({ showWeaponModel: value }),
+  setIncludeChangeMapAliases: (value) => set({ includeChangeMapAliases: value }),
+  setIncludeChangeModelAliases: (value) => set({ includeChangeModelAliases: value }),
+  setIncludeSmilesAliases: (value) => set({ includeSmilesAliases: value }),
+  setIncludeSoundFix: (value) => set({ includeSoundFix: value }),
+  setIncludeSpectateAlias: (value) => set({ includeSpectateAlias: value }),
+  setForceEnemyModel: (value) => set({ forceEnemyModel: value }),
+  setForceTeammateModel: (value) => set({ forceTeammateModel: value }),
 }))

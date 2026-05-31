@@ -6,6 +6,7 @@ import SlotsTab from '@/components/tabs/SlotsTab'
 import ScriptsTab from '@/components/tabs/ScriptsTab'
 import TeamBindsTab from '@/components/tabs/TeamBindsTab'
 import HlConfigTab from '@/components/tabs/HlConfigTab'
+import GameplayTab from '@/components/tabs/GameplayTab'
 import GenerateModal from '@/components/modals/GenerateModal'
 
 const tabs = ['hlconfig', 'names', 'weapons', 'slots', 'scripts', 'teambinds', 'agconfig'] as const
@@ -39,6 +40,7 @@ export default function AppShell() {
           {activeTab === 'hlconfig' && <HlConfigTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'scripts' && <ScriptsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'teambinds' && <TeamBindsTab onGenerate={() => setShowGenerate(true)} />}
+          {activeTab === 'agconfig' && <GameplayTab onGenerate={() => setShowGenerate(true)} />}
         </div>
       </main>
 
