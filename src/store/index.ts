@@ -56,7 +56,62 @@ interface TeamBindsSlice {
   setFocusedTeamBind: (index: number | null) => void
 }
 
-type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice & TeamBindsSlice
+interface BasicConfigSlice {
+  sensitivity: string
+  zoomSensitivityRatio: string
+  mouseFilter: boolean
+  rawInput: boolean
+  showWeaponImage: boolean
+  enableChatSounds: boolean
+  showOldScoreboard: boolean
+  showSpeedometer: boolean
+  speedometerUnderCrosshair: boolean
+  teamScoresSummary: string
+  clockMode: 'off' | 'time_remaining' | 'elapsed_time'
+  rainbowHud: boolean
+  hudColorR: string
+  hudColorG: string
+  hudColorB: string
+  pov: string
+  mp5Speed: string
+  mp5Length: string
+  mp5Transparency: string
+  mp5Offset: string
+  mp5ColorR: string
+  mp5ColorG: string
+  mp5ColorB: string
+  showFps: boolean
+  vsync: boolean
+  maxFps: string
+  setSensitivity: (value: string) => void
+  setZoomSensitivityRatio: (value: string) => void
+  setMouseFilter: (value: boolean) => void
+  setRawInput: (value: boolean) => void
+  setShowWeaponImage: (value: boolean) => void
+  setEnableChatSounds: (value: boolean) => void
+  setShowOldScoreboard: (value: boolean) => void
+  setShowSpeedometer: (value: boolean) => void
+  setSpeedometerUnderCrosshair: (value: boolean) => void
+  setTeamScoresSummary: (value: string) => void
+  setClockMode: (mode: 'off' | 'time_remaining' | 'elapsed_time') => void
+  setRainbowHud: (value: boolean) => void
+  setHudColorR: (value: string) => void
+  setHudColorG: (value: string) => void
+  setHudColorB: (value: string) => void
+  setPov: (value: string) => void
+  setMp5Speed: (value: string) => void
+  setMp5Length: (value: string) => void
+  setMp5Transparency: (value: string) => void
+  setMp5Offset: (value: string) => void
+  setMp5ColorR: (value: string) => void
+  setMp5ColorG: (value: string) => void
+  setMp5ColorB: (value: string) => void
+  setShowFps: (value: boolean) => void
+  setVsync: (value: boolean) => void
+  setMaxFps: (value: string) => void
+}
+
+type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice & TeamBindsSlice & BasicConfigSlice
 
 const WEAPON_IDS = [
   '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
@@ -129,4 +184,57 @@ export const useStore = create<Store>((set) => ({
       return { teamBinds }
     }),
   setFocusedTeamBind: (index) => set({ focusedTeamBind: index }),
+
+  sensitivity: '',
+  zoomSensitivityRatio: '',
+  mouseFilter: false,
+  rawInput: true,
+  showWeaponImage: true,
+  enableChatSounds: false,
+  showOldScoreboard: false,
+  showSpeedometer: false,
+  speedometerUnderCrosshair: false,
+  teamScoresSummary: '0',
+  clockMode: 'elapsed_time',
+  rainbowHud: false,
+  hudColorR: '0',
+  hudColorG: '0',
+  hudColorB: '0',
+  pov: '',
+  mp5Speed: '',
+  mp5Length: '',
+  mp5Transparency: '',
+  mp5Offset: '',
+  mp5ColorR: '0',
+  mp5ColorG: '0',
+  mp5ColorB: '0',
+  showFps: false,
+  vsync: false,
+  maxFps: '',
+  setSensitivity: (value) => set({ sensitivity: value }),
+  setZoomSensitivityRatio: (value) => set({ zoomSensitivityRatio: value }),
+  setMouseFilter: (value) => set({ mouseFilter: value }),
+  setRawInput: (value) => set({ rawInput: value }),
+  setShowWeaponImage: (value) => set({ showWeaponImage: value }),
+  setEnableChatSounds: (value) => set({ enableChatSounds: value }),
+  setShowOldScoreboard: (value) => set({ showOldScoreboard: value }),
+  setShowSpeedometer: (value) => set({ showSpeedometer: value }),
+  setSpeedometerUnderCrosshair: (value) => set({ speedometerUnderCrosshair: value }),
+  setTeamScoresSummary: (value) => set({ teamScoresSummary: value }),
+  setClockMode: (mode) => set({ clockMode: mode }),
+  setRainbowHud: (value) => set({ rainbowHud: value }),
+  setHudColorR: (value) => set({ hudColorR: value }),
+  setHudColorG: (value) => set({ hudColorG: value }),
+  setHudColorB: (value) => set({ hudColorB: value }),
+  setPov: (value) => set({ pov: value }),
+  setMp5Speed: (value) => set({ mp5Speed: value }),
+  setMp5Length: (value) => set({ mp5Length: value }),
+  setMp5Transparency: (value) => set({ mp5Transparency: value }),
+  setMp5Offset: (value) => set({ mp5Offset: value }),
+  setMp5ColorR: (value) => set({ mp5ColorR: value }),
+  setMp5ColorG: (value) => set({ mp5ColorG: value }),
+  setMp5ColorB: (value) => set({ mp5ColorB: value }),
+  setShowFps: (value) => set({ showFps: value }),
+  setVsync: (value) => set({ vsync: value }),
+  setMaxFps: (value) => set({ maxFps: value }),
 }))

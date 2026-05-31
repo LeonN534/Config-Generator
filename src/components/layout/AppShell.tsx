@@ -5,14 +5,15 @@ import WeaponsTab from '@/components/tabs/WeaponsTab'
 import SlotsTab from '@/components/tabs/SlotsTab'
 import ScriptsTab from '@/components/tabs/ScriptsTab'
 import TeamBindsTab from '@/components/tabs/TeamBindsTab'
+import HlConfigTab from '@/components/tabs/HlConfigTab'
 import GenerateModal from '@/components/modals/GenerateModal'
 
-const tabs = ['names', 'weapons', 'slots', 'scripts', 'teambinds', 'hlconfig', 'agconfig'] as const
+const tabs = ['hlconfig', 'names', 'weapons', 'slots', 'scripts', 'teambinds', 'agconfig'] as const
 
 export type TabId = (typeof tabs)[number]
 
 export default function AppShell() {
-  const [activeTab, setActiveTab] = useState<TabId>('names')
+  const [activeTab, setActiveTab] = useState<TabId>('hlconfig')
   const [showGenerate, setShowGenerate] = useState(false)
 
   return (
@@ -35,6 +36,7 @@ export default function AppShell() {
           {activeTab === 'names' && <NamesTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'weapons' && <WeaponsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'slots' && <SlotsTab onGenerate={() => setShowGenerate(true)} />}
+          {activeTab === 'hlconfig' && <HlConfigTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'scripts' && <ScriptsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'teambinds' && <TeamBindsTab onGenerate={() => setShowGenerate(true)} />}
         </div>

@@ -15,6 +15,7 @@ import { generateWeapons } from '@/generators/weaponsGenerator'
 import { generateSlots } from '@/generators/slotsGenerator'
 import { generateScripts } from '@/generators/scriptsGenerator'
 import { generateTeamBinds } from '@/generators/teamBindsGenerator'
+import { generateBasicConfig } from '@/generators/basicConfigGenerator'
 
 const INVALID_CHARS = /[\\/:*?"<>|]/g
 
@@ -45,12 +46,13 @@ export default function GenerateModal({ open, onOpenChange }: Props) {
       const slotsSection = generateSlots(state)
       const scriptsSection = generateScripts(state.scriptBinds, state.autobunnyhopMode, state.lowSensitivityValue)
       const teamBindsSection = generateTeamBinds(state.teamBinds)
+      const basicConfigSection = generateBasicConfig(state)
 
       const res = await fetch('/assets/base.cfg')
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const base = await res.text()
 
-      const sections = [namesSection, weaponsSection, slotsSection, scriptsSection, teamBindsSection].filter(Boolean)
+      const sections = [basicConfigSection, namesSection, weaponsSection, slotsSection, scriptsSection, teamBindsSection].filter(Boolean)
       const content = sections.length > 0 ? `${base}\n${sections.join('\n\n')}\n` : base
       const blob = new Blob([content], { type: 'text/plain' })
       const url = URL.createObjectURL(blob)
