@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback } from 'react'
-import { ScrollText } from 'lucide-react'
+import { HelpCircle, ScrollText } from 'lucide-react'
 import { useI18n } from '@/i18n'
 import { useStore } from '@/store'
 import SpecialKeyButtons from '@/components/shared/SpecialKeyButtons'
@@ -37,8 +37,11 @@ export default function ScriptsTab({ onGenerate }: Props) {
   const lowSensitivityValue = useStore((s) => s.lowSensitivityValue)
   const setLowSensitivityValue = useStore((s) => s.setLowSensitivityValue)
   const [focusedLocal, setFocusedLocal] = useState(false)
+  const [showQuTooltip, setShowQuTooltip] = useState(false)
+  const [quTooltipPos, setQuTooltipPos] = useState({ x: 0, y: 0 })
   const inputRefs = useRef<Record<number, HTMLInputElement | null>>({})
   const lsSensRef = useRef<HTMLInputElement | null>(null)
+  const quIconRef = useRef<HTMLSpanElement>(null)
 
   const handleSpecialKey = useCallback((key: string) => {
     if (focusedScript === null) return
@@ -77,9 +80,27 @@ export default function ScriptsTab({ onGenerate }: Props) {
               <div className="w-9 h-9 flex items-center justify-center flex-shrink-0 bg-white/[0.04] rounded">
                 <ScrollText className="w-4 h-4 text-white/20" />
               </div>
-              <span className="text-sm text-white/70 font-body flex-1 min-w-0 truncate">
-                {t(script.nameKey)}
-              </span>
+              <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                <span className="text-sm text-white/70 font-body truncate">
+                  {t(script.nameKey)}
+                </span>
+                {index === 13 && (
+                  <span
+                    ref={quIconRef}
+                    className="flex-shrink-0"
+                    onMouseEnter={() => {
+                      if (quIconRef.current) {
+                        const r = quIconRef.current.getBoundingClientRect()
+                        setQuTooltipPos({ x: r.right + 8, y: r.top + r.height / 2 })
+                        setShowQuTooltip(true)
+                      }
+                    }}
+                    onMouseLeave={() => setShowQuTooltip(false)}
+                  >
+                    <HelpCircle className="w-3.5 h-3.5 text-white/30 hover:text-[#f37b22] transition-colors cursor-help" />
+                  </span>
+                )}
+              </div>
               {index === 0 && (
                 <div className="flex items-center bg-white/[0.04] border border-white/[0.08] rounded-lg overflow-hidden flex-shrink-0">
                    <button
@@ -206,6 +227,15 @@ export default function ScriptsTab({ onGenerate }: Props) {
           </div>
         </div>
       </div>
+      {showQuTooltip && (
+        <div
+          className="fixed bg-[#1a1a1a] border border-white/[0.08] rounded-lg px-3 py-1.5 text-[11px] text-white/70 font-body whitespace-nowrap shadow-lg z-50 pointer-events-none"
+          style={{ left: quTooltipPos.x, top: quTooltipPos.y, transform: 'translateY(-50%)' }}
+        >
+          This key replaces the default +use command. It cannot be used
+          together with the Using team communication bind.
+        </div>
+      )}
     </div>
   )
 }

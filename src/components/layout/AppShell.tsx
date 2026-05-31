@@ -4,6 +4,7 @@ import NamesTab from '@/components/tabs/NamesTab'
 import WeaponsTab from '@/components/tabs/WeaponsTab'
 import SlotsTab from '@/components/tabs/SlotsTab'
 import ScriptsTab from '@/components/tabs/ScriptsTab'
+import TeamBindsTab from '@/components/tabs/TeamBindsTab'
 import GenerateModal from '@/components/modals/GenerateModal'
 
 const tabs = ['names', 'weapons', 'slots', 'scripts', 'teambinds', 'hlconfig', 'agconfig'] as const
@@ -35,6 +36,7 @@ export default function AppShell() {
           {activeTab === 'weapons' && <WeaponsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'slots' && <SlotsTab onGenerate={() => setShowGenerate(true)} />}
           {activeTab === 'scripts' && <ScriptsTab onGenerate={() => setShowGenerate(true)} />}
+          {activeTab === 'teambinds' && <TeamBindsTab onGenerate={() => setShowGenerate(true)} />}
         </div>
       </main>
 

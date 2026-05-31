@@ -49,7 +49,14 @@ interface ScriptsSlice {
   setLowSensitivityValue: (value: string) => void
 }
 
-type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice
+interface TeamBindsSlice {
+  teamBinds: string[]
+  focusedTeamBind: number | null
+  setTeamBind: (index: number, key: string) => void
+  setFocusedTeamBind: (index: number | null) => void
+}
+
+type Store = NamesSlice & WeaponsSlice & SlotsSlice & ScriptsSlice & TeamBindsSlice
 
 const WEAPON_IDS = [
   '9mmAR', 'crossbow', 'crowbar', 'egon', 'gauss',
@@ -112,4 +119,14 @@ export const useStore = create<Store>((set) => ({
   setAutobunnyhopMode: (mode) => set({ autobunnyhopMode: mode }),
   lowSensitivityValue: '',
   setLowSensitivityValue: (value) => set({ lowSensitivityValue: value }),
+
+  teamBinds: Array(14).fill(''),
+  focusedTeamBind: null,
+  setTeamBind: (index, key) =>
+    set((state) => {
+      const teamBinds = [...state.teamBinds]
+      teamBinds[index] = key
+      return { teamBinds }
+    }),
+  setFocusedTeamBind: (index) => set({ focusedTeamBind: index }),
 }))
